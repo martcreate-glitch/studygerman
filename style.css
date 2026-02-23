@@ -1,5 +1,5 @@
 body {
-    background-color: #f0f2f5;
+    background-color: #f8f9fa;
     color: #333;
     font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
     display: flex;
@@ -11,63 +11,94 @@ body {
 
 .container {
     text-align: center;
-    padding: 40px;
+    padding: 30px;
     border-radius: 24px;
     background-color: #ffffff;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.05);
     width: 90%;
-    max-width: 450px;
+    max-width: 480px;
 }
 
 h1 {
-    font-size: 2em;
-    margin-bottom: 30px;
+    font-size: 1.8em;
+    margin-bottom: 25px;
     color: #2c3e50;
 }
 
-.quiz-box {
-    margin-bottom: 20px;
+/* 레벨 선택 화면 */
+.level-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
 }
 
+.level-btn {
+    padding: 15px;
+    font-size: 1.1em;
+    background-color: #f1f3f5;
+    color: #495057;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.level-btn:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* 시험 화면 */
 .word-display {
-    font-size: 3em;
+    font-size: 2.8em;
     font-weight: 700;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     color: #007bff;
 }
 
+.gender-selection {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.gender-btn {
+    padding: 8px 20px;
+    background-color: #e9ecef;
+    color: #495057;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.gender-btn.selected {
+    background-color: #007bff;
+    color: white;
+    border-color: #0056b3;
+}
+
 input[type="text"] {
-    width: 80%;
+    width: calc(100% - 44px);
     padding: 12px 20px;
     font-size: 1.1em;
-    border: 2px solid #e0e0e0;
+    border: 2px solid #e9ecef;
     border-radius: 12px;
     margin-bottom: 15px;
     outline: none;
-    transition: border-color 0.3s;
 }
 
-input[type="text"]:focus {
-    border-color: #007bff;
-}
-
-button {
+#submit-btn {
+    width: 100%;
     background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 12px 25px;
+    padding: 15px;
     font-size: 1.1em;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-button:hover {
-    background-color: #0056b3;
 }
 
 .feedback {
-    height: 1.5em;
+    min-height: 1.5em;
     margin: 15px 0;
     font-weight: 600;
 }
@@ -76,19 +107,32 @@ button:hover {
 .incorrect { color: #dc3545; }
 
 .score-board {
-    margin-top: 20px;
+    margin: 20px 0;
     font-size: 1.1em;
-    font-weight: 500;
     color: #666;
 }
 
-#reset-btn {
-    margin-top: 20px;
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.secondary-btn {
     background-color: #6c757d;
     font-size: 0.9em;
     padding: 8px 16px;
+    border-radius: 8px;
 }
 
-#reset-btn:hover {
+.secondary-btn:hover {
     background-color: #5a6268;
+}
+
+button {
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-radius: 12px;
 }

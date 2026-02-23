@@ -3,23 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>독일어 단어 시험</title>
+    <title>독일어 단어 마스터</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <h1>독일어 단어 시험</h1>
-        <div class="quiz-box">
-            <div id="word-display" class="word-display">Laden...</div>
-            <input type="text" id="answer-input" placeholder="뜻을 입력하세요" autocomplete="off">
-            <button id="submit-btn">확인</button>
+        
+        <!-- 레벨 선택 화면 -->
+        <div id="level-selection">
+            <p>난이도를 선택하세요:</p>
+            <div class="level-buttons">
+                <button class="level-btn" data-level="A1">초급 (A1)</button>
+                <button class="level-btn" data-level="A2">중급 (A2)</button>
+                <button class="level-btn" data-level="B1">고급 (B1)</button>
+            </div>
         </div>
-        <div id="feedback" class="feedback"></div>
-        <div class="score-board">
-            점수: <span id="score">0</span> / <span id="total">0</span>
+
+        <!-- 시험 화면 -->
+        <div id="quiz-area" style="display: none;">
+            <div class="quiz-box">
+                <div id="word-display" class="word-display">Laden...</div>
+                
+                <!-- 성별 선택 (명사일 때만 표시) -->
+                <div id="gender-selection" class="gender-selection" style="display: none;">
+                    <button class="gender-btn" data-gender="der">der</button>
+                    <button class="gender-btn" data-gender="die">die</button>
+                    <button class="gender-btn" data-gender="das">das</button>
+                </div>
+
+                <input type="text" id="answer-input" placeholder="뜻을 입력하세요" autocomplete="off">
+                <button id="submit-btn">확인</button>
+            </div>
+            <div id="feedback" class="feedback"></div>
+            <div class="score-board">
+                점수: <span id="score">0</span> / <span id="total">0</span>
+            </div>
+            <div class="nav-buttons">
+                <button id="home-btn" class="secondary-btn">메뉴로</button>
+                <button id="reset-btn" class="secondary-btn">다시 시작</button>
+            </div>
         </div>
-        <button id="reset-btn">다시 시작</button>
     </div>
     <script src="main.js"></script>
 </body>
 </html>
+
