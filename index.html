@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <h1 id="main-title">외국어 단어 시험</h1>
+        <h1 id="main-title">외국어 학습</h1>
         
         <!-- 언어 선택 화면 -->
         <div id="language-selection">
@@ -16,6 +16,26 @@
             <div class="language-buttons">
                 <button class="lang-btn" data-lang="german">독일어 (German)</button>
                 <button class="lang-btn" data-lang="english">영어 (English)</button>
+            </div>
+        </div>
+
+        <!-- 모드 선택 화면 -->
+        <div id="mode-selection" style="display: none;">
+            <p id="mode-text">학습 모드를 선택하세요:</p>
+            <div class="mode-buttons">
+                <button id="grammar-mode-btn" class="mode-btn">문법 공부 (A1)</button>
+                <button id="vocab-mode-btn" class="mode-btn">단어 시험</button>
+            </div>
+            <button id="mode-back-to-lang" class="secondary-btn" style="margin-top: 20px;">언어 변경</button>
+        </div>
+
+        <!-- 문법 공부 화면 -->
+        <div id="grammar-area" style="display: none;">
+            <div id="grammar-title" class="grammar-title">A1 문법</div>
+            <div id="grammar-list" class="grammar-list"></div>
+            <div class="nav-buttons">
+                <button id="grammar-home-btn" class="secondary-btn">모드 선택</button>
+                <button id="grammar-lang-btn" class="secondary-btn">언어 선택</button>
             </div>
         </div>
 
@@ -27,7 +47,7 @@
                 <button class="level-btn" data-level="A2">중급 (A2/Intermediate)</button>
                 <button class="level-btn" data-level="B1">고급 (B1/Advanced)</button>
             </div>
-            <button id="back-to-lang" class="secondary-btn" style="margin-top: 20px;">언어 변경</button>
+            <button id="back-to-mode" class="secondary-btn" style="margin-top: 20px;">모드 선택</button>
         </div>
 
         <!-- 시험 화면 -->

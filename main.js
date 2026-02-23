@@ -142,9 +142,59 @@ let score = 0;
 let total = 0;
 let selectedGender = null;
 let currentLang = "german";
+let currentLevel = "A1";
+
+const a1GrammarByLanguage = {
+    german: [
+        {
+            title: "be 동사에 해당하는 sein",
+            explanation: "ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie/Sie sind 형태를 먼저 익히세요."
+        },
+        {
+            title: "동사 현재형 변화",
+            explanation: "규칙 동사는 어간 + -e, -st, -t, -en, -t, -en으로 활용합니다. 예: machen -> ich mache."
+        },
+        {
+            title: "정관사 der / die / das",
+            explanation: "독일어 명사는 성이 있어 관사를 함께 외워야 합니다. 예: der Mann, die Frau, das Kind."
+        },
+        {
+            title: "의문문 만들기",
+            explanation: "의문사는 문장 맨 앞, 동사는 2번째 위치입니다. Ja/Nein 의문문은 동사가 맨 앞에 옵니다."
+        },
+        {
+            title: "부정하기 (nicht / kein)",
+            explanation: "nicht는 동사/형용사/문장 부정, kein은 명사 앞에서 부정 관사로 사용합니다."
+        }
+    ],
+    english: [
+        {
+            title: "be 동사 현재형",
+            explanation: "I am, You are, He/She/It is, We/They are 형태를 문장으로 반복 연습하세요."
+        },
+        {
+            title: "일반동사 현재형",
+            explanation: "3인칭 단수에서 -s/-es를 붙입니다. 예: He works, She watches."
+        },
+        {
+            title: "기초 시제: 현재진행형",
+            explanation: "be + 동사-ing 형태입니다. 예: I am studying, They are playing."
+        },
+        {
+            title: "의문문과 부정문",
+            explanation: "일반동사는 do/does를 사용합니다. 예: Do you like coffee? She does not like milk."
+        },
+        {
+            title: "기초 전치사 in / on / at",
+            explanation: "장소와 시간에서 자주 쓰이는 A1 전치사입니다. 예: at 7, on Monday, in Seoul."
+        }
+    ]
+};
 
 const languageSelection = document.getElementById('language-selection');
+const modeSelection = document.getElementById('mode-selection');
 const levelSelection = document.getElementById('level-selection');
+const grammarArea = document.getElementById('grammar-area');
 const quizArea = document.getElementById('quiz-area');
 const wordDisplay = document.getElementById('word-display');
 const genderSelection = document.getElementById('gender-selection');
@@ -155,8 +205,23 @@ const scoreSpan = document.getElementById('score');
 const totalSpan = document.getElementById('total');
 const homeBtn = document.getElementById('home-btn');
 const resetBtn = document.getElementById('reset-btn');
-const backToLangBtn = document.getElementById('back-to-lang');
+const backToModeBtn = document.getElementById('back-to-mode');
+const modeBackToLangBtn = document.getElementById('mode-back-to-lang');
+const grammarModeBtn = document.getElementById('grammar-mode-btn');
+const vocabModeBtn = document.getElementById('vocab-mode-btn');
+const grammarList = document.getElementById('grammar-list');
+const grammarTitle = document.getElementById('grammar-title');
+const grammarHomeBtn = document.getElementById('grammar-home-btn');
+const grammarLangBtn = document.getElementById('grammar-lang-btn');
 const mainTitle = document.getElementById('main-title');
+
+function hideAllSections() {
+    languageSelection.style.display = "none";
+    modeSelection.style.display = "none";
+    levelSelection.style.display = "none";
+    grammarArea.style.display = "none";
+    quizArea.style.display = "none";
+}
 
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -167,12 +232,41 @@ function shuffle(array) {
 
 function selectLanguage(lang) {
     currentLang = lang;
-    languageSelection.style.display = "none";
+    hideAllSections();
+    modeSelection.style.display = "block";
+    mainTitle.textContent = lang === "german" ? "독일어 학습" : "영어 학습";
+}
+
+function renderA1Grammar() {
+    const lessons = a1GrammarByLanguage[currentLang] || [];
+    grammarList.innerHTML = "";
+    lessons.forEach((lesson, idx) => {
+        const card = document.createElement("div");
+        card.className = "grammar-card";
+        card.innerHTML = `
+            <h3>${idx + 1}. ${lesson.title}</h3>
+            <p>${lesson.explanation}</p>
+        `;
+        grammarList.appendChild(card);
+    });
+}
+
+function openGrammarStudy() {
+    hideAllSections();
+    grammarArea.style.display = "block";
+    grammarTitle.textContent = currentLang === "german" ? "독일어 A1 문법" : "영어 A1 문법";
+    mainTitle.textContent = currentLang === "german" ? "독일어 문법 공부" : "영어 문법 공부";
+    renderA1Grammar();
+}
+
+function openLevelSelection() {
+    hideAllSections();
     levelSelection.style.display = "block";
-    mainTitle.textContent = lang === "german" ? "독일어 단어 시험" : "영어 단어 시험";
+    mainTitle.textContent = currentLang === "german" ? "독일어 단어 시험" : "영어 단어 시험";
 }
 
 function startQuiz(level) {
+    currentLevel = level;
     currentWords = allWords.filter(w => w.lang === currentLang && w.level === level);
     shuffle(currentWords);
     currentIndex = 0;
@@ -180,7 +274,7 @@ function startQuiz(level) {
     total = 0;
     scoreSpan.textContent = "0";
     totalSpan.textContent = "0";
-    levelSelection.style.display = "none";
+    hideAllSections();
     quizArea.style.display = "block";
     nextQuestion();
 }
@@ -275,19 +369,44 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     homeBtn.addEventListener('click', () => {
-        quizArea.style.display = "none";
-        levelSelection.style.display = "block";
+        openLevelSelection();
     });
 
-    backToLangBtn.addEventListener('click', () => {
-        levelSelection.style.display = "none";
+    modeBackToLangBtn.addEventListener('click', () => {
+        hideAllSections();
         languageSelection.style.display = "block";
-        mainTitle.textContent = "외국어 단어 시험";
+        mainTitle.textContent = "외국어 학습";
+    });
+
+    grammarModeBtn.addEventListener('click', () => {
+        openGrammarStudy();
+    });
+
+    vocabModeBtn.addEventListener('click', () => {
+        openLevelSelection();
+    });
+
+    backToModeBtn.addEventListener('click', () => {
+        hideAllSections();
+        modeSelection.style.display = "block";
+        mainTitle.textContent = currentLang === "german" ? "독일어 학습" : "영어 학습";
+    });
+
+    grammarHomeBtn.addEventListener('click', () => {
+        hideAllSections();
+        modeSelection.style.display = "block";
+        mainTitle.textContent = currentLang === "german" ? "독일어 학습" : "영어 학습";
+    });
+
+    grammarLangBtn.addEventListener('click', () => {
+        hideAllSections();
+        languageSelection.style.display = "block";
+        mainTitle.textContent = "외국어 학습";
     });
 
     resetBtn.addEventListener('click', () => {
         if (currentWords.length > 0) {
-            startQuiz(currentWords[0].level);
+            startQuiz(currentLevel);
         }
     });
 });
