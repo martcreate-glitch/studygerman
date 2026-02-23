@@ -3,21 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>독일어 단어 마스터</title>
+    <title>외국어 단어 마스터</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>독일어 단어 시험</h1>
+        <h1 id="main-title">외국어 단어 시험</h1>
         
-        <!-- 레벨 선택 화면 -->
-        <div id="level-selection">
-            <p>난이도를 선택하세요:</p>
-            <div class="level-buttons">
-                <button class="level-btn" data-level="A1">초급 (A1)</button>
-                <button class="level-btn" data-level="A2">중급 (A2)</button>
-                <button class="level-btn" data-level="B1">고급 (B1)</button>
+        <!-- 언어 선택 화면 -->
+        <div id="language-selection">
+            <p>공부할 언어를 선택하세요:</p>
+            <div class="language-buttons">
+                <button class="lang-btn" data-lang="german">독일어 (German)</button>
+                <button class="lang-btn" data-lang="english">영어 (English)</button>
             </div>
+        </div>
+
+        <!-- 레벨 선택 화면 -->
+        <div id="level-selection" style="display: none;">
+            <p id="level-text">난이도를 선택하세요:</p>
+            <div class="level-buttons">
+                <button class="level-btn" data-level="A1">초급 (A1/Basic)</button>
+                <button class="level-btn" data-level="A2">중급 (A2/Intermediate)</button>
+                <button class="level-btn" data-level="B1">고급 (B1/Advanced)</button>
+            </div>
+            <button id="back-to-lang" class="secondary-btn" style="margin-top: 20px;">언어 변경</button>
         </div>
 
         <!-- 시험 화면 -->
@@ -25,7 +35,7 @@
             <div class="quiz-box">
                 <div id="word-display" class="word-display">Laden...</div>
                 
-                <!-- 성별 선택 (명사일 때만 표시) -->
+                <!-- 성별 선택 (독일어 명사일 때만 표시) -->
                 <div id="gender-selection" class="gender-selection" style="display: none;">
                     <button class="gender-btn" data-gender="der">der</button>
                     <button class="gender-btn" data-gender="die">die</button>
@@ -43,6 +53,16 @@
                 <button id="home-btn" class="secondary-btn">메뉴로</button>
                 <button id="reset-btn" class="secondary-btn">다시 시작</button>
             </div>
+        </div>
+
+        <!-- 광고 배너 -->
+        <div class="ad-banner">
+            <a href="https://smartstore.naver.com/officinanaturae/products/13094666155" target="_blank">
+                <div class="ad-content">
+                    <span class="ad-label">AD</span>
+                    <span class="ad-text">추천 상품 보러가기</span>
+                </div>
+            </a>
         </div>
     </div>
     <script src="main.js"></script>

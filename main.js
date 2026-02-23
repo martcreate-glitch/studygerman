@@ -1,118 +1,115 @@
 const allWords = [
+    // 독일어 (German)
     // A1 Nouns
-    { german: "Apfel", korean: "사과", level: "A1", type: "noun", gender: "der" },
-    { german: "Haus", korean: "집", level: "A1", type: "noun", gender: "das" },
-    { german: "Auto", korean: "자동차", level: "A1", type: "noun", gender: "das" },
-    { german: "Buch", korean: "책", level: "A1", type: "noun", gender: "das" },
-    { german: "Wasser", korean: "물", level: "A1", type: "noun", gender: "das" },
-    { german: "Brot", korean: "빵", level: "A1", type: "noun", gender: "das" },
-    { german: "Schule", korean: "학교", level: "A1", type: "noun", gender: "die" },
-    { german: "Freund", korean: "친구", level: "A1", type: "noun", gender: "der" },
-    { german: "Zeit", korean: "시간", level: "A1", type: "noun", gender: "die" },
-    { german: "Liebe", korean: "사랑", level: "A1", type: "noun", gender: "die" },
-    { german: "Mann", korean: "남자", level: "A1", type: "noun", gender: "der" },
-    { german: "Frau", korean: "여자", level: "A1", type: "noun", gender: "die" },
-    { german: "Kind", korean: "아이", level: "A1", type: "noun", gender: "das" },
-    { german: "Vater", korean: "아버지", level: "A1", type: "noun", gender: "der" },
-    { german: "Mutter", korean: "어머니", level: "A1", type: "noun", gender: "die" },
-    { german: "Stadt", korean: "도시", level: "A1", type: "noun", gender: "die" },
-    { german: "Name", korean: "이름", level: "A1", type: "noun", gender: "der" },
-    { german: "Tag", korean: "날", level: "A1", type: "noun", gender: "der" },
-    { german: "Woche", korean: "주", level: "A1", type: "noun", gender: "die" },
-    { german: "Monat", korean: "달", level: "A1", type: "noun", gender: "der" },
-    { german: "Jahr", korean: "년", level: "A1", type: "noun", gender: "das" },
-    { german: "Hand", korean: "손", level: "A1", type: "noun", gender: "die" },
-    { german: "Auge", korean: "눈", level: "A1", type: "noun", gender: "das" },
-    { german: "Mund", korean: "입", level: "A1", type: "noun", gender: "der" },
-    { german: "Kopf", korean: "머리", level: "A1", type: "noun", gender: "der" },
-    { german: "Essen", korean: "음식", level: "A1", type: "noun", gender: "das" },
-    { german: "Tisch", korean: "책상", level: "A1", type: "noun", gender: "der" },
-    { german: "Stuhl", korean: "의자", level: "A1", type: "noun", gender: "der" },
-    { german: "Bett", korean: "침대", level: "A1", type: "noun", gender: "das" },
-    { german: "Tür", korean: "문", level: "A1", type: "noun", gender: "die" },
-    { german: "Fenster", korean: "창문", level: "A1", type: "noun", gender: "das" },
-    { german: "Sonne", korean: "태양", level: "A1", type: "noun", gender: "die" },
-    { german: "Mond", korean: "달", level: "A1", type: "noun", gender: "der" },
-    { german: "Baum", korean: "나무", level: "A1", type: "noun", gender: "der" },
-    { german: "Blume", korean: "꽃", level: "A1", type: "noun", gender: "die" },
-    { german: "Hund", korean: "개", level: "A1", type: "noun", gender: "der" },
-    { german: "Katze", korean: "고양이", level: "A1", type: "noun", gender: "die" },
-    { german: "Vogel", korean: "새", level: "A1", type: "noun", gender: "der" },
-    { german: "Milch", korean: "우유", level: "A1", type: "noun", gender: "die" },
-    { german: "Kaffee", korean: "커피", level: "A1", type: "noun", gender: "der" },
+    { word: "Apfel", korean: "사과", level: "A1", type: "noun", gender: "der", lang: "german" },
+    { word: "Haus", korean: "집", level: "A1", type: "noun", gender: "das", lang: "german" },
+    { word: "Auto", korean: "자동차", level: "A1", type: "noun", gender: "das", lang: "german" },
+    { word: "Buch", korean: "책", level: "A1", type: "noun", gender: "das", lang: "german" },
+    { word: "Wasser", korean: "물", level: "A1", type: "noun", gender: "das", lang: "german" },
+    { word: "Brot", korean: "빵", level: "A1", type: "noun", gender: "das", lang: "german" },
+    { word: "Schule", korean: "학교", level: "A1", type: "noun", gender: "die", lang: "german" },
+    { word: "Freund", korean: "친구", level: "A1", type: "noun", gender: "der", lang: "german" },
+    { word: "Zeit", korean: "시간", level: "A1", type: "noun", gender: "die", lang: "german" },
+    { word: "Liebe", korean: "사랑", level: "A1", type: "noun", gender: "die", lang: "german" },
+    { word: "Mann", korean: "남자", level: "A1", type: "noun", gender: "der", lang: "german" },
+    { word: "Frau", korean: "여자", level: "A1", type: "noun", gender: "die", lang: "german" },
+    { word: "Kind", korean: "아이", level: "A1", type: "noun", gender: "das", lang: "german" },
+    { word: "Vater", korean: "아버지", level: "A1", type: "noun", gender: "der", lang: "german" },
+    { word: "Mutter", korean: "어머니", level: "A1", type: "noun", gender: "die", lang: "german" },
+    { word: "Stadt", korean: "도시", level: "A1", type: "noun", gender: "die", lang: "german" },
+    { word: "Name", korean: "이름", level: "A1", type: "noun", gender: "der", lang: "german" },
+    { word: "Tag", korean: "날", level: "A1", type: "noun", gender: "der", lang: "german" },
+    { word: "Woche", korean: "주", level: "A1", type: "noun", gender: "die", lang: "german" },
+    { word: "Monat", korean: "달", level: "A1", type: "noun", gender: "der", lang: "german" },
+    { word: "Jahr", korean: "년", level: "A1", type: "noun", gender: "das", lang: "german" },
+    { word: "Hand", korean: "손", level: "A1", type: "noun", gender: "die", lang: "german" },
+    { word: "Auge", korean: "눈", level: "A1", type: "noun", gender: "das", lang: "german" },
+    { word: "Mund", korean: "입", level: "A1", type: "noun", gender: "der", lang: "german" },
+    { word: "Kopf", korean: "머리", level: "A1", type: "noun", gender: "der", lang: "german" },
+    { word: "Essen", korean: "음식", level: "A1", type: "noun", gender: "das", lang: "german" },
+    { word: "Tisch", korean: "책상", level: "A1", type: "noun", gender: "der", lang: "german" },
+    { word: "Stuhl", korean: "의자", level: "A1", type: "noun", gender: "der", lang: "german" },
+    { word: "Bett", korean: "침대", level: "A1", type: "noun", gender: "das", lang: "german" },
+    { word: "Tür", korean: "문", level: "A1", type: "noun", gender: "die", lang: "german" },
+    { word: "Fenster", korean: "창문", level: "A1", type: "noun", gender: "das", lang: "german" },
+    { word: "Sonne", korean: "태양", level: "A1", type: "noun", gender: "die", lang: "german" },
+    { word: "Mond", korean: "달", level: "A1", type: "noun", gender: "der", lang: "german" },
+    { word: "Baum", korean: "나무", level: "A1", type: "noun", gender: "der", lang: "german" },
+    { word: "Blume", korean: "꽃", level: "A1", type: "noun", gender: "die", lang: "german" },
+    { word: "Hund", korean: "개", level: "A1", type: "noun", gender: "der", lang: "german" },
+    { word: "Katze", korean: "고양이", level: "A1", type: "noun", gender: "die", lang: "german" },
+    { word: "Vogel", korean: "새", level: "A1", type: "noun", gender: "der", lang: "german" },
+    { word: "Milch", korean: "우유", level: "A1", type: "noun", gender: "die", lang: "german" },
+    { word: "Kaffee", korean: "커피", level: "A1", type: "noun", gender: "der", lang: "german" },
 
-    // A1 Verbs & Adjectives
-    { german: "sein", korean: "이다", level: "A1", type: "other" },
-    { german: "haben", korean: "가지다", level: "A1", type: "other" },
-    { german: "machen", korean: "하다", level: "A1", type: "other" },
-    { german: "gehen", korean: "가다", level: "A1", type: "other" },
-    { german: "kommen", korean: "오다", level: "A1", type: "other" },
-    { german: "sehen", korean: "보다", level: "A1", type: "other" },
-    { german: "sprechen", korean: "말하다", level: "A1", type: "other" },
-    { german: "essen", korean: "먹다", level: "A1", type: "other" },
-    { german: "trinken", korean: "마시다", level: "A1", type: "other" },
-    { german: "gut", korean: "좋은", level: "A1", type: "other" },
-    { german: "groß", korean: "큰", level: "A1", type: "other" },
-    { german: "klein", korean: "작은", level: "A1", type: "other" },
-    { german: "neu", korean: "새로운", level: "A1", type: "other" },
-    { german: "alt", korean: "오래된", level: "A1", type: "other" },
-    { german: "schön", korean: "아름다운", level: "A1", type: "other" },
+    // A1 Verbs & Adjectives (German)
+    { word: "sein", korean: "이다", level: "A1", type: "other", lang: "german" },
+    { word: "haben", korean: "가지다", level: "A1", type: "other", lang: "german" },
+    { word: "machen", korean: "하다", level: "A1", type: "other", lang: "german" },
+    { word: "gehen", korean: "가다", level: "A1", type: "other", lang: "german" },
+    { word: "kommen", korean: "오다", level: "A1", type: "other", lang: "german" },
+    { word: "sehen", korean: "보다", level: "A1", type: "other", lang: "german" },
+    { word: "sprechen", korean: "말하다", level: "A1", type: "other", lang: "german" },
+    { word: "essen", korean: "먹다", level: "A1", type: "other", lang: "german" },
+    { word: "trinken", korean: "마시다", level: "A1", type: "other", lang: "german" },
+    { word: "gut", korean: "좋은", level: "A1", type: "other", lang: "german" },
+    { word: "groß", korean: "큰", level: "A1", type: "other", lang: "german" },
+    { word: "klein", korean: "작은", level: "A1", type: "other", lang: "german" },
+    { word: "neu", korean: "새로운", level: "A1", type: "other", lang: "german" },
+    { word: "alt", korean: "오래된", level: "A1", type: "other", lang: "german" },
+    { word: "schön", korean: "아름다운", level: "A1", type: "other", lang: "german" },
 
-    // A2 Nouns
-    { german: "Arbeit", korean: "일", level: "A2", type: "noun", gender: "die" },
-    { german: "Reise", korean: "여행", level: "A2", type: "noun", gender: "die" },
-    { german: "Geld", korean: "돈", level: "A2", type: "noun", gender: "das" },
-    { german: "Frage", korean: "질문", level: "A2", type: "noun", gender: "die" },
-    { german: "Antwort", korean: "대답", level: "A2", type: "noun", gender: "die" },
-    { german: "Problem", korean: "문제", level: "A2", type: "noun", gender: "das" },
-    { german: "Lösung", korean: "해결", level: "A2", type: "noun", gender: "die" },
-    { german: "Weg", korean: "길", level: "A2", type: "noun", gender: "der" },
-    { german: "Welt", korean: "세상", level: "A2", type: "noun", gender: "die" },
-    { german: "Geschichte", korean: "이야기", level: "A2", type: "noun", gender: "die" },
-    { german: "Erfahrung", korean: "경험", level: "A2", type: "noun", gender: "die" },
-    { german: "Erfolg", korean: "성공", level: "A2", type: "noun", gender: "der" },
-    { german: "Glück", korean: "행복", level: "A2", type: "noun", gender: "das" },
-    { german: "Zukunft", korean: "미래", level: "A2", type: "noun", gender: "die" },
-    { german: "Hoffnung", korean: "희망", level: "A2", type: "noun", gender: "die" },
-    { german: "Gesundheit", korean: "건강", level: "A2", type: "noun", gender: "die" },
-    { german: "Freiheit", korean: "자유", level: "A2", type: "noun", gender: "die" },
-    { german: "Wahrheit", korean: "진실", level: "A2", type: "noun", gender: "die" },
-    { german: "Geschenk", korean: "선물", level: "A2", type: "noun", gender: "das" },
-    { german: "Gefühl", korean: "느낌", level: "A2", type: "noun", gender: "das" },
+    // 영어 (English)
+    // A1 (English)
+    { word: "apple", korean: "사과", level: "A1", type: "other", lang: "english" },
+    { word: "house", korean: "집", level: "A1", type: "other", lang: "english" },
+    { word: "car", korean: "자동차", level: "A1", type: "other", lang: "english" },
+    { word: "book", korean: "책", level: "A1", type: "other", lang: "english" },
+    { word: "water", korean: "물", level: "A1", type: "other", lang: "english" },
+    { word: "bread", korean: "빵", level: "A1", type: "other", lang: "english" },
+    { word: "school", korean: "학교", level: "A1", type: "other", lang: "english" },
+    { word: "friend", korean: "친구", level: "A1", type: "other", lang: "english" },
+    { word: "time", korean: "시간", level: "A1", type: "other", lang: "english" },
+    { word: "love", korean: "사랑", level: "A1", type: "other", lang: "english" },
+    { word: "man", korean: "남자", level: "A1", type: "other", lang: "english" },
+    { word: "woman", korean: "여자", level: "A1", type: "other", lang: "english" },
+    { word: "child", korean: "아이", level: "A1", type: "other", lang: "english" },
+    { word: "father", korean: "아버지", level: "A1", type: "other", lang: "english" },
+    { word: "mother", korean: "어머니", level: "A1", type: "other", lang: "english" },
+    { word: "city", korean: "도시", level: "A1", type: "other", lang: "english" },
+    { word: "name", korean: "이름", level: "A1", type: "other", lang: "english" },
+    { word: "day", korean: "날", level: "A1", type: "other", lang: "english" },
+    { word: "week", korean: "주", level: "A1", type: "other", lang: "english" },
+    { word: "month", korean: "달", level: "A1", type: "other", lang: "english" },
+    { word: "year", korean: "년", level: "A1", type: "other", lang: "english" },
+    { word: "hand", korean: "손", level: "A1", type: "other", lang: "english" },
+    { word: "eye", korean: "눈", level: "A1", type: "other", lang: "english" },
+    { word: "mouth", korean: "입", level: "A1", type: "other", lang: "english" },
+    { word: "head", korean: "머리", level: "A1", type: "other", lang: "english" },
+    { word: "food", korean: "음식", level: "A1", type: "other", lang: "english" },
+    { word: "desk", korean: "책상", level: "A1", type: "other", lang: "english" },
+    { word: "chair", korean: "의자", level: "A1", type: "other", lang: "english" },
+    { word: "bed", korean: "침대", level: "A1", type: "other", lang: "english" },
+    { word: "door", korean: "문", level: "A1", type: "other", lang: "english" },
+    
+    // A2 (English)
+    { word: "work", korean: "일", level: "A2", type: "other", lang: "english" },
+    { word: "travel", korean: "여행", level: "A2", type: "other", lang: "english" },
+    { word: "money", korean: "돈", level: "A2", type: "other", lang: "english" },
+    { word: "question", korean: "질문", level: "A2", type: "other", lang: "english" },
+    { word: "answer", korean: "대답", level: "A2", type: "other", lang: "english" },
+    { word: "problem", korean: "문제", level: "A2", type: "other", lang: "english" },
+    { word: "solution", korean: "해결", level: "A2", type: "other", lang: "english" },
+    { word: "way", korean: "길", level: "A2", type: "other", lang: "english" },
+    { word: "world", korean: "세상", level: "A2", type: "other", lang: "english" },
+    { word: "story", korean: "이야기", level: "A2", type: "other", lang: "english" },
 
-    // A2 Other
-    { german: "denken", korean: "생각하다", level: "A2", type: "other" },
-    { german: "wissen", korean: "알다", level: "A2", type: "other" },
-    { german: "verstehen", korean: "이해하다", level: "A2", type: "other" },
-    { german: "lernen", korean: "배우다", level: "A2", type: "other" },
-    { german: "arbeiten", korean: "일하다", level: "A2", type: "other" },
-    { german: "reisen", korean: "여행하다", level: "A2", type: "other" },
-    { german: "kaufen", korean: "사다", level: "A2", type: "other" },
-    { german: "suchen", korean: "찾다", level: "A2", type: "other" },
-    { german: "finden", korean: "발견하다", level: "A2", type: "other" },
-    { german: "wichtig", korean: "중요한", level: "A2", type: "other" },
-    { german: "möglich", korean: "가능한", level: "A2", type: "other" },
-    { german: "sicher", korean: "안전한", level: "A2", type: "other" },
-    { german: "einfach", korean: "쉬운", level: "A2", type: "other" },
-    { german: "schwierig", korean: "어려운", level: "A2", type: "other" },
-    { german: "vielleicht", korean: "아마도", level: "A2", type: "other" },
-
-    // B1 Nouns & Other
-    { german: "Gesellschaft", korean: "사회", level: "B1", type: "noun", gender: "die" },
-    { german: "Entscheidung", korean: "결정", level: "B1", type: "noun", gender: "die" },
-    { german: "Verantwortung", korean: "책임", level: "B1", type: "noun", gender: "die" },
-    { german: "Möglichkeit", korean: "가능성", level: "B1", type: "noun", gender: "die" },
-    { german: "Unterschied", korean: "차이", level: "B1", type: "noun", gender: "der" },
-    { german: "Beziehung", korean: "관계", level: "B1", type: "noun", gender: "die" },
-    { german: "Eindruck", korean: "인상", level: "B1", type: "noun", gender: "der" },
-    { german: "Kenntnis", korean: "지식", level: "B1", type: "noun", gender: "die" },
-    { german: "Voraussetzung", korean: "전제조건", level: "B1", type: "noun", gender: "die" },
-    { german: "Zusammenhang", korean: "맥락", level: "B1", type: "noun", gender: "der" },
-    { german: "empfehlen", korean: "추천하다", level: "B1", type: "other" },
-    { german: "vergleichen", korean: "비교하다", level: "B1", type: "other" },
-    { german: "überzeugen", korean: "설득하다", level: "B1", type: "other" },
-    { german: "vermeiden", korean: "피하다", level: "B1", type: "other" },
-    { german: "entscheiden", korean: "결정하다", level: "B1", type: "other" }
+    // B1 (English)
+    { word: "society", korean: "사회", level: "B1", type: "other", lang: "english" },
+    { word: "decision", korean: "결정", level: "B1", type: "other", lang: "english" },
+    { word: "responsibility", korean: "책임", level: "B1", type: "other", lang: "english" },
+    { word: "possibility", korean: "가능성", level: "B1", type: "other", lang: "english" },
+    { word: "difference", korean: "차이", level: "B1", type: "other", lang: "english" }
 ];
 
 let currentWords = [];
@@ -120,7 +117,9 @@ let currentIndex = 0;
 let score = 0;
 let total = 0;
 let selectedGender = null;
+let currentLang = "german";
 
+const languageSelection = document.getElementById('language-selection');
 const levelSelection = document.getElementById('level-selection');
 const quizArea = document.getElementById('quiz-area');
 const wordDisplay = document.getElementById('word-display');
@@ -132,6 +131,8 @@ const scoreSpan = document.getElementById('score');
 const totalSpan = document.getElementById('total');
 const homeBtn = document.getElementById('home-btn');
 const resetBtn = document.getElementById('reset-btn');
+const backToLangBtn = document.getElementById('back-to-lang');
+const mainTitle = document.getElementById('main-title');
 
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -140,8 +141,15 @@ function shuffle(array) {
     }
 }
 
+function selectLanguage(lang) {
+    currentLang = lang;
+    languageSelection.style.display = "none";
+    levelSelection.style.display = "block";
+    mainTitle.textContent = lang === "german" ? "독일어 단어 시험" : "영어 단어 시험";
+}
+
 function startQuiz(level) {
-    currentWords = allWords.filter(w => w.level === level);
+    currentWords = allWords.filter(w => w.lang === currentLang && w.level === level);
     shuffle(currentWords);
     currentIndex = 0;
     score = 0;
@@ -163,8 +171,8 @@ function nextQuestion() {
         return;
     }
 
-    const word = currentWords[currentIndex];
-    wordDisplay.textContent = word.german;
+    const wordObj = currentWords[currentIndex];
+    wordDisplay.textContent = wordObj.word;
     answerInput.value = "";
     answerInput.style.display = "block";
     submitBtn.style.display = "block";
@@ -173,7 +181,7 @@ function nextQuestion() {
     
     document.querySelectorAll('.gender-btn').forEach(btn => btn.classList.remove('selected'));
 
-    if (word.type === "noun") {
+    if (currentLang === "german" && wordObj.type === "noun") {
         genderSelection.style.display = "flex";
     } else {
         genderSelection.style.display = "none";
@@ -183,13 +191,13 @@ function nextQuestion() {
 }
 
 function checkAnswer() {
-    const word = currentWords[currentIndex];
+    const wordObj = currentWords[currentIndex];
     const userAnswer = answerInput.value.trim();
-    const isCorrectMeaning = userAnswer === word.korean;
+    const isCorrectMeaning = userAnswer === wordObj.korean;
     let isCorrectGender = true;
 
-    if (word.type === "noun") {
-        isCorrectGender = selectedGender === word.gender;
+    if (currentLang === "german" && wordObj.type === "noun") {
+        isCorrectGender = selectedGender === wordObj.gender;
     }
 
     total++;
@@ -198,8 +206,13 @@ function checkAnswer() {
         feedback.textContent = "정답입니다! 🎉";
         feedback.className = "feedback correct";
     } else {
-        let errorMsg = `틀렸습니다. 정답: ${word.type === 'noun' ? word.gender + ' ' : ''}${word.german} - ${word.korean}`;
-        feedback.textContent = errorMsg;
+        let answerStr = wordObj.korean;
+        if (currentLang === "german" && wordObj.type === "noun") {
+            answerStr = `${wordObj.gender} ${wordObj.word} - ${wordObj.korean}`;
+        } else {
+            answerStr = `${wordObj.word} - ${wordObj.korean}`;
+        }
+        feedback.textContent = `틀렸습니다. 정답: ${answerStr}`;
         feedback.className = "feedback incorrect";
     }
 
@@ -211,28 +224,46 @@ function checkAnswer() {
 }
 
 // Event Listeners
-document.querySelectorAll('.level-btn').forEach(btn => {
-    btn.addEventListener('click', () => startQuiz(btn.dataset.level));
-});
-
-document.querySelectorAll('.gender-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        selectedGender = btn.dataset.gender;
-        document.querySelectorAll('.gender-btn').forEach(b => b.classList.remove('selected'));
-        btn.classList.add('selected');
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            selectLanguage(btn.dataset.lang);
+        });
     });
-});
 
-submitBtn.addEventListener('click', checkAnswer);
-answerInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') checkAnswer();
-});
+    document.querySelectorAll('.level-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            startQuiz(btn.dataset.level);
+        });
+    });
 
-homeBtn.addEventListener('click', () => {
-    quizArea.style.display = "none";
-    levelSelection.style.display = "block";
-});
+    document.querySelectorAll('.gender-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            selectedGender = btn.dataset.gender;
+            document.querySelectorAll('.gender-btn').forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+        });
+    });
 
-resetBtn.addEventListener('click', () => {
-    startQuiz(currentWords[0].level);
+    submitBtn.addEventListener('click', checkAnswer);
+    answerInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') checkAnswer();
+    });
+
+    homeBtn.addEventListener('click', () => {
+        quizArea.style.display = "none";
+        levelSelection.style.display = "block";
+    });
+
+    backToLangBtn.addEventListener('click', () => {
+        levelSelection.style.display = "none";
+        languageSelection.style.display = "block";
+        mainTitle.textContent = "외국어 단어 시험";
+    });
+
+    resetBtn.addEventListener('click', () => {
+        if (currentWords.length > 0) {
+            startQuiz(currentWords[0].level);
+        }
+    });
 });
