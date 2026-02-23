@@ -1,24 +1,24 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotto Number Generator</title>
+    <title>독일어 단어 시험</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Lotto Number Generator</h1>
-        <div class="lotto-numbers">
-            <span class="number"></span>
-            <span class="number"></span>
-            <span class="number"></span>
-            <span class="number"></span>
-            <span class="number"></span>
-            <span class="number"></span>
+        <h1>독일어 단어 시험</h1>
+        <div class="quiz-box">
+            <div id="word-display" class="word-display">Laden...</div>
+            <input type="text" id="answer-input" placeholder="뜻을 입력하세요" autocomplete="off">
+            <button id="submit-btn">확인</button>
         </div>
-        <button id="generate-btn">Generate Numbers</button>
+        <div id="feedback" class="feedback"></div>
+        <div class="score-board">
+            점수: <span id="score">0</span> / <span id="total">0</span>
+        </div>
+        <button id="reset-btn">다시 시작</button>
     </div>
     <script src="main.js"></script>
 </body>
