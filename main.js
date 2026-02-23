@@ -59,6 +59,30 @@ const allWords = [
     { word: "alt", korean: "오래된", level: "A1", type: "other", lang: "german" },
     { word: "schön", korean: "아름다운", level: "A1", type: "other", lang: "german" },
 
+    // A2 (German)
+    { word: "Arbeit", korean: "일", level: "A2", type: "noun", gender: "die", lang: "german" },
+    { word: "Reise", korean: "여행", level: "A2", type: "noun", gender: "die", lang: "german" },
+    { word: "Geld", korean: "돈", level: "A2", type: "noun", gender: "das", lang: "german" },
+    { word: "Frage", korean: "질문", level: "A2", type: "noun", gender: "die", lang: "german" },
+    { word: "Antwort", korean: "대답", level: "A2", type: "noun", gender: "die", lang: "german" },
+    { word: "Problem", korean: "문제", level: "A2", type: "noun", gender: "das", lang: "german" },
+    { word: "Lösung", korean: "해결", level: "A2", type: "noun", gender: "die", lang: "german" },
+    { word: "Weg", korean: "길", level: "A2", type: "noun", gender: "der", lang: "german" },
+    { word: "Welt", korean: "세상", level: "A2", type: "noun", gender: "die", lang: "german" },
+    { word: "Geschichte", korean: "이야기", level: "A2", type: "noun", gender: "die", lang: "german" },
+
+    // B1 (German)
+    { word: "Gesellschaft", korean: "사회", level: "B1", type: "noun", gender: "die", lang: "german" },
+    { word: "Entscheidung", korean: "결정", level: "B1", type: "noun", gender: "die", lang: "german" },
+    { word: "Verantwortung", korean: "책임", level: "B1", type: "noun", gender: "die", lang: "german" },
+    { word: "Möglichkeit", korean: "가능성", level: "B1", type: "noun", gender: "die", lang: "german" },
+    { word: "Unterschied", korean: "차이", level: "B1", type: "noun", gender: "der", lang: "german" },
+    { word: "Erfahrung", korean: "경험", level: "B1", type: "noun", gender: "die", lang: "german" },
+    { word: "Zukunft", korean: "미래", level: "B1", type: "noun", gender: "die", lang: "german" },
+    { word: "Wissen", korean: "지식", level: "B1", type: "noun", gender: "das", lang: "german" },
+    { word: "Meinung", korean: "의견", level: "B1", type: "noun", gender: "die", lang: "german" },
+    { word: "Gefühl", korean: "느낌", level: "B1", type: "noun", gender: "das", lang: "german" },
+
     // 영어 (English)
     // A1 (English)
     { word: "apple", korean: "사과", level: "A1", type: "other", lang: "english" },
