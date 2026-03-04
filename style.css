@@ -198,20 +198,21 @@ body {
 
 #prev-btn {
   grid-column: 1;
-  justify-self: start;
   min-width: 96px;
 }
 
 #random-btn {
   grid-column: 2;
-  justify-self: center;
   min-width: 96px;
 }
 
 #reveal-btn {
   grid-column: 3;
-  justify-self: end;
   min-width: 96px;
+}
+
+.card-actions .nav-btn {
+  width: 100%;
 }
 
 .nav-btn {
