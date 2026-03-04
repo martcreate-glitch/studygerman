@@ -1,91 +1,69 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>외국어 단어 마스터</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>초급 단어장 | German & English</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1 id="main-title">외국어 학습</h1>
-        
-        <!-- 언어 선택 화면 -->
-        <div id="language-selection">
-            <p>공부할 언어를 선택하세요:</p>
-            <div class="language-buttons">
-                <button class="lang-btn" data-lang="german">독일어 (German)</button>
-                <button class="lang-btn" data-lang="english">영어 (English)</button>
-            </div>
-        </div>
+  <main class="app">
+    <header class="hero">
+      <p class="eyebrow">Word Notebook</p>
+      <h1>초급 단어장</h1>
+      <p class="subtitle">언어별로 단어를 외우며 기초를 다지는 단어장</p>
+    </header>
 
-        <!-- 모드 선택 화면 -->
-        <div id="mode-selection" style="display: none;">
-            <p id="mode-text">학습 모드를 선택하세요:</p>
-            <div class="mode-buttons">
-                <button id="grammar-mode-btn" class="mode-btn">문법 공부 (A1)</button>
-                <button id="vocab-mode-btn" class="mode-btn">단어 시험</button>
-            </div>
-            <button id="mode-back-to-lang" class="secondary-btn" style="margin-top: 20px;">언어 변경</button>
+    <section class="controls" aria-label="단어장 제어">
+      <div class="control-group">
+        <span class="label">언어</span>
+        <div class="chips" id="language-chips">
+          <button class="chip active" data-lang="english">영어</button>
+          <button class="chip" data-lang="german">독일어</button>
         </div>
+      </div>
 
-        <!-- 문법 공부 화면 -->
-        <div id="grammar-area" style="display: none;">
-            <div id="grammar-title" class="grammar-title">A1 문법</div>
-            <div id="grammar-list" class="grammar-list"></div>
-            <div class="nav-buttons">
-                <button id="grammar-home-btn" class="secondary-btn">모드 선택</button>
-                <button id="grammar-lang-btn" class="secondary-btn">언어 선택</button>
-            </div>
+      <div class="control-group search-group">
+        <label class="label" for="search-input">검색</label>
+        <input id="search-input" type="text" placeholder="단어 또는 뜻 검색 (예: house, 집)">
+      </div>
+
+      <div class="control-group">
+        <span class="label">품사</span>
+        <div class="chips" id="type-chips">
+          <button class="chip active" data-type="all">전체</button>
+          <button class="chip" data-type="noun">명사</button>
+          <button class="chip" data-type="verb">동사</button>
+          <button class="chip" data-type="adjective">형용사</button>
+          <button class="chip" data-type="expression">표현</button>
         </div>
+      </div>
+    </section>
 
-        <!-- 레벨 선택 화면 -->
-        <div id="level-selection" style="display: none;">
-            <p id="level-text">난이도를 선택하세요:</p>
-            <div class="level-buttons">
-                <button class="level-btn" data-level="A1">초급 (A1/Basic)</button>
-                <button class="level-btn" data-level="A2">중급 (A2/Intermediate)</button>
-                <button class="level-btn" data-level="B1">고급 (B1/Advanced)</button>
-            </div>
-            <button id="back-to-mode" class="secondary-btn" style="margin-top: 20px;">모드 선택</button>
-        </div>
+    <section class="summary" aria-live="polite">
+      <strong id="count-text">총 0개</strong>
+      <span id="current-language">영어 A1 단어장</span>
+    </section>
 
-        <!-- 시험 화면 -->
-        <div id="quiz-area" style="display: none;">
-            <div class="quiz-box">
-                <div id="word-display" class="word-display">Laden...</div>
-                
-                <!-- 성별 선택 (독일어 명사일 때만 표시) -->
-                <div id="gender-selection" class="gender-selection" style="display: none;">
-                    <button class="gender-btn" data-gender="der">der</button>
-                    <button class="gender-btn" data-gender="die">die</button>
-                    <button class="gender-btn" data-gender="das">das</button>
-                </div>
+    <section class="flashcard-wrap">
+      <article id="flashcard" class="flashcard" aria-label="단어 카드">
+        <p id="card-type" class="card-type">명사</p>
+        <h2 id="card-word" class="card-word">-</h2>
+        <p id="card-meaning" class="card-meaning" hidden>-</p>
+        <p class="hint">카드를 터치하거나 눌러 뜻 보기</p>
+      </article>
 
-                <input type="text" id="answer-input" placeholder="뜻을 입력하세요" autocomplete="off">
-                <button id="submit-btn">확인</button>
-            </div>
-            <div id="feedback" class="feedback"></div>
-            <div class="score-board">
-                점수: <span id="score">0</span> / <span id="total">0</span>
-            </div>
-            <div class="nav-buttons">
-                <button id="home-btn" class="secondary-btn">메뉴로</button>
-                <button id="reset-btn" class="secondary-btn">다시 시작</button>
-            </div>
-        </div>
+      <div class="card-actions">
+        <button id="prev-btn" class="nav-btn" type="button">이전</button>
+        <button id="reveal-btn" class="nav-btn primary" type="button">뜻 보기</button>
+        <button id="next-btn" class="nav-btn" type="button">다음</button>
+      </div>
 
-        <!-- 광고 배너 -->
-        <div class="ad-banner">
-            <a href="https://smartstore.naver.com/officinanaturae/products/13094666155" target="_blank">
-                <div class="ad-content">
-                    <span class="ad-label">AD</span>
-                    <span class="ad-text">추천 상품 보러가기</span>
-                </div>
-            </a>
-        </div>
-    </div>
-    <script src="main.js"></script>
+      <p class="gesture-hint">모바일: 카드를 좌우로 밀어 넘기기</p>
+      <p id="empty-state" class="empty-state" hidden>조건에 맞는 단어가 없습니다.</p>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
 </body>
 </html>
-
