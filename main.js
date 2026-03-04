@@ -204,7 +204,6 @@ const beginnerWords = [
   { lang: "english", word: "I am tired.", meaning: "저는 피곤해요.", type: "expression" }
 ];
 
-const searchInputEl = document.getElementById("search-input");
 const countTextEl = document.getElementById("count-text");
 const currentLanguageEl = document.getElementById("current-language");
 const languageChipsEl = document.getElementById("language-chips");
@@ -216,7 +215,7 @@ const cardTypeEl = document.getElementById("card-type");
 const cardWordEl = document.getElementById("card-word");
 const cardMeaningEl = document.getElementById("card-meaning");
 const prevBtnEl = document.getElementById("prev-btn");
-const nextBtnEl = document.getElementById("next-btn");
+const randomBtnEl = document.getElementById("random-btn");
 const revealBtnEl = document.getElementById("reveal-btn");
 
 const languageLabel = { german: "독일어", english: "영어" };
@@ -233,12 +232,10 @@ let touchStartY = 0;
 let recentSwipe = false;
 
 function getFilteredWords() {
-  const keyword = searchInputEl.value.trim().toLowerCase();
   return beginnerWords.filter((item) => {
     if (item.lang !== selectedLang) return false;
     if (selectedType !== "all" && item.type !== selectedType) return false;
-    if (!keyword) return true;
-    return `${item.word} ${item.meaning}`.toLowerCase().includes(keyword);
+    return true;
   });
 }
 
@@ -262,7 +259,7 @@ function updateCard() {
     cardMeaningEl.hidden = true;
     revealBtnEl.disabled = true;
     prevBtnEl.disabled = true;
-    nextBtnEl.disabled = true;
+    randomBtnEl.disabled = true;
     return;
   }
 
@@ -270,14 +267,14 @@ function updateCard() {
   flashcardEl.classList.remove("is-empty");
   revealBtnEl.disabled = false;
   prevBtnEl.disabled = false;
-  nextBtnEl.disabled = false;
+  randomBtnEl.disabled = filteredWords.length === 0;
 
   const currentWord = filteredWords[currentIndex];
   cardTypeEl.textContent = typeLabel[currentWord.type];
   cardWordEl.textContent = currentWord.word;
   cardMeaningEl.textContent = currentWord.meaning;
   cardMeaningEl.hidden = !isMeaningVisible;
-  revealBtnEl.textContent = isMeaningVisible ? "뜻 숨기기" : "뜻 보기";
+  revealBtnEl.textContent = isMeaningVisible ? "다음" : "뜻 보기";
 }
 
 function getRandomIndex(length) {
@@ -317,10 +314,35 @@ function showPrevCard() {
   updateCard();
 }
 
-function toggleMeaning() {
+function showRandomCard() {
   if (filteredWords.length === 0) return;
-  isMeaningVisible = !isMeaningVisible;
+  const prevIndex = currentIndex;
+
+  if (filteredWords.length > 1) {
+    let nextIndex = getRandomIndex(filteredWords.length);
+    while (nextIndex === currentIndex) {
+      nextIndex = getRandomIndex(filteredWords.length);
+    }
+    currentIndex = nextIndex;
+  }
+
+  currentProgress = currentIndex + 1;
+  isMeaningVisible = false;
   updateCard();
+
+  flashcardEl.classList.remove("card-shuffle");
+  void flashcardEl.offsetWidth; // force reflow to restart animation
+  flashcardEl.classList.add("card-shuffle");
+}
+
+function showMeaningOrNext() {
+  if (filteredWords.length === 0) return;
+  if (!isMeaningVisible) {
+    isMeaningVisible = true;
+    updateCard();
+    return;
+  }
+  showNextCard();
 }
 
 function activateChip(target, selector) {
@@ -343,11 +365,9 @@ typeChipsEl.addEventListener("click", (event) => {
   activateChip(button, "#type-chips .chip");
   renderCards(true);
 });
-
-searchInputEl.addEventListener("input", () => renderCards(true));
 prevBtnEl.addEventListener("click", showPrevCard);
-nextBtnEl.addEventListener("click", showNextCard);
-revealBtnEl.addEventListener("click", toggleMeaning);
+randomBtnEl.addEventListener("click", showRandomCard);
+revealBtnEl.addEventListener("click", showMeaningOrNext);
 flashcardEl.addEventListener("click", handleCardTap);
 
 flashcardEl.addEventListener(
@@ -383,5 +403,5 @@ function handleCardTap() {
     recentSwipe = false;
     return;
   }
-  toggleMeaning();
+  showMeaningOrNext();
 }
